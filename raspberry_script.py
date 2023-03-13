@@ -13,11 +13,11 @@ def makeApiCall():
 
 if __name__ == '__main__':
     #Serial communication
-    ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+    ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
     ser.reset_input_buffer()
     
 
     while True:
         res = makeApiCall()
         ser.write((res + '\n').encode())
-        time.sleep(30)
+        time.sleep(12)
